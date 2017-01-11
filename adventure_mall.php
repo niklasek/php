@@ -41,6 +41,7 @@ elseif ($_GET['page'] == 2):
 ?>
 <h2>Stugan</h2>
 <p>Det ser inte ut som att någon är hemma.</p>
+<img src="img/hut.jpg">
 <form action="adventure_mall.php">
 	<label>Åt vilket håll går du?</label><br>
 	<input type="radio" name="page" value="5" id="west">
