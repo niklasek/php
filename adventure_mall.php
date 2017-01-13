@@ -11,6 +11,9 @@
 <h1>Äventyret</h1>
 
 <?php
+/** Kolla om query string parametern (GET parametern) är (==) tom (NULL)
+ *	I fall att den är tom visas ett formulär som ber besökaren fylla i sitt namn
+ */
 if ($_GET['player_name'] == NULL):
 ?>
 <form action="adventure_mall.php">
@@ -20,6 +23,10 @@ if ($_GET['player_name'] == NULL):
 	<input type="submit" value="Skicka">
 </form>
 <?php
+/** Annars om GET parametern "page" är lika med 1
+ *	Visas den första 'sidan' med beskrivning av omgivningen och 
+ *	ett formulär för att komma vidare
+ */
 elseif ($_GET['page'] == 1):
 ?>
 <h2>Hej <? echo $_GET['player_name'] ?></h2>
@@ -37,6 +44,9 @@ elseif ($_GET['page'] == 1):
 </form>
 
 <?php
+/** Om "page" inte var 1, kollar vi om den kanske är 2
+ *	I fall att detta stämmer visas den andra sidan
+ */
 elseif ($_GET['page'] == 2):
 ?>
 <h2>Stugan</h2>
@@ -55,6 +65,9 @@ elseif ($_GET['page'] == 2):
 </form>
 
 <?php
+/** Här tar elseif -satserna slut. Eftersom vi inte använder tecknen {} för att
+ *	visa php var våra kodblock börjar och slutar behövs ett endif
+ */
 endif
 ?>
 
